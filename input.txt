@@ -1,0 +1,24 @@
+x = 2000 // 7;
+y = 3000 // 8;
+if (x < 100 || x > 200 && x != y) { z = 0; }
+if ((x < 100 || x > 200) && x != y) { z = 1; }
+n = 100;
+j = n + 1;
+for (i = 0 to j - 2 step 2.0) {
+ if (i == 0) {
+ A[i] = 1.;
+ } else {
+ k = i / 2;
+ A[k] = (A[k - 1] * A[k - 1] + k) % n;
+ j = j + 1;
+ }
+}
+for (i = n - 2 downto 0 step 1) {
+ for (j = 0 to i step 1) {
+ if (A[j] > A[j + 1]) {
+ t = A[j];
+ A[j] = A[j + 1];
+ A[j + 1] = t;
+ }
+ }
+}
